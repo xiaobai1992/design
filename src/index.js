@@ -72,17 +72,68 @@
 // xm.getWeight()
 // alert(xm.weight)
 
-//实例
-class jQuery {
-    constructor(selector){
-        let slice = Array.prototype.slice
-        let dom = slice.call(document.querySelectorAll(selector))
-        let len = dom?dom.length:0
-        for (let i = 0;i<len;i++){
-            this[i]=dom[i]
-        }
-        this.length = len
-        this.seletor = selector||''
+
+//多态
+class People {
+    constructor(name,house){
+        this.name = name
+        this.house = house
+    }
+    saySomething(){
+
+    }
+}
+class A extends People{
+    constructor(name,house){
+        super(name,house)
+    }
+    saySomething(){
+
     }
 
 }
+class B extends People{
+    constructor(name,house){
+        super(name,house)
+    }
+    saySomething(){
+
+    }
+
+}
+
+
+
+//实例
+
+
+// class jQuery {
+//     constructor(selector){
+//         let slice = Array.prototype.slice
+//         let dom = slice.call(document.querySelectorAll(selector))
+//         let len = dom?dom.length:0
+//         for (let i = 0;i<len;i++){
+//             this[i]=dom[i]
+//         }
+//         this.length = len
+//         this.seletor = selector||''
+//     }
+//     append(node){
+//
+//     }
+//     addClass(name){
+//
+//     }
+//     html(data){
+//
+//     }
+//
+// }
+// window.$ = function (selector) {
+//     //工厂模式
+//     return new jQuery(selector)
+// }
+// //执行测试
+// var $p = $('p')
+// console.log($p)
+// console.log($p.addClass)
